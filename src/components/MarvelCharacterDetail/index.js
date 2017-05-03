@@ -1,0 +1,1 @@
+export {MarvelCharacterDetail} from './MarvelCharacterDetail';

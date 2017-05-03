@@ -1,0 +1,47 @@
+.marvel-character-detail {
+  flex-grow: 1;
+  padding: 20px;
+  position: relative;
+
+  h1 {
+    color: #61dafb;
+    font-size: 42px;
+    font-weight: 100;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  img.thumbnail {
+    animation: thumbnail 0.3s 1;
+    border-radius: 50%;
+    box-shadow: 0 0 6px black;
+    display: block;
+    height: 400px;
+    margin: 0 auto;
+    object-fit: cover;
+    width: 400px;
+  }
+
+  @keyframes thumbnail {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .img-404 {
+    background-color: #61dafb;
+    border-radius: 50%;
+    box-shadow: 0 0 6px black;
+    color: white;
+    font-size: 42px;
+    height: 400px;
+    line-height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    width: 400px;
+  }
+  
+}

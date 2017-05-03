@@ -1,0 +1,6 @@
+exports[`test renders ReactLogoLoader correctly when there is no character prop set 1`] = `
+<img
+  alt="React logo spinning"
+  className="react-logo-loader"
+  src="logo.svg" />
+`;

@@ -1,0 +1,7 @@
+exports[`test renders MarvelCharactersList correctly 1`] = `
+<ul
+  className="marvel-characters-list">
+  <li />
+  <li />
+</ul>
+`;

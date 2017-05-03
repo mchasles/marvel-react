@@ -1,0 +1,7 @@
+exports[`test renders App correctly 1`] = `
+<div
+  className="app">
+  <ul
+    className="marvel-characters-list" />
+</div>
+`;

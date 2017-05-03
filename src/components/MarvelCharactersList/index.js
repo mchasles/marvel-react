@@ -1,0 +1,1 @@
+export {MarvelCharactersList} from './MarvelCharactersList';

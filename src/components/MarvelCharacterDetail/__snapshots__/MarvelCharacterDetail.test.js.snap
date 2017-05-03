@@ -1,0 +1,24 @@
+exports[`test renders MarvelCharacterDetail correctly when there is no character prop set 1`] = `
+<div
+  className="marvel-character-detail">
+  <img
+    alt="React logo spinning"
+    className="react-logo-loader"
+    src="logo.svg" />
+</div>
+`;
+
+exports[`test renders MarvelCharacterDetail correctly when there is one character prop set 1`] = `
+<div
+  className="marvel-character-detail">
+  <div>
+    <h1>
+      3-D Man
+    </h1>
+    <div
+      className="img-404">
+      Image Not Found
+    </div>
+  </div>
+</div>
+`;
