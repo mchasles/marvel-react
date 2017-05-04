@@ -8,3 +8,17 @@ body {
   background-color: #2d2d2d;
 }
 
+.app-landing-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+  position: relative;
+}
+
+.react-logo-landing {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  height: 400px;
+  width: 400px;
+}
