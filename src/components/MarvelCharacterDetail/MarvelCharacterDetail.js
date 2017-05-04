@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {IMG_NOT_AVAILABLE_SRC, loadCharacter, getCharacterPortraitSrc} from '../../lib/marvelApiService';
+import {preloadImg} from '../../lib/utils';
 import {ReactLogoLoader} from '../ReactLogoLoader/';
 import './MarvelCharacterDetail.scss';
 
@@ -27,7 +28,7 @@ export class MarvelCharacterDetail extends Component {
         (portraitSrc) => {
           // Preload image in browser's cache before updating state
           character.portraitSrc = portraitSrc;
-          return this.loadImg(character.portraitSrc)
+          return preloadImg(character.portraitSrc)
             .then(
               () => this.setState({character}),
               () => {
@@ -42,18 +43,6 @@ export class MarvelCharacterDetail extends Component {
           character.portraitSrc = portraitSrc;
           this.setState({character});
         });
-  }
-
-  loadImg(src){
-    return new Promise((resolve, reject) => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.onload = () => resolve('done');
-      // If image does not load after 6 seconds, reject promise
-      setTimeout(() => {
-        reject('error')
-      }, 6000);
-    });
   }
 
   render() {
