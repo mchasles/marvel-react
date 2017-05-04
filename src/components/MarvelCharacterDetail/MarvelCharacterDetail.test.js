@@ -6,26 +6,37 @@ import renderer from 'react-test-renderer';
 jest.mock('../../lib/marvelApiService');
 import {characters} from '../../lib/marvelApiService';
 
-/*
-  Temporarily disable MarvelCharacterDetail because couldn't mock this.props.match.params.id from react-router
-*/
-
-it('fake test', () => {
-  expect(true).toBe(true);
+it('renders MarvelCharacterDetail without crashing', () => {
+  const props = {
+    character: characters[0],
+    match: {
+      params: {id: '1'}
+    }
+  };
+  ReactDOM.render(React.createElement(MarvelCharacterDetail, props), document.createElement('div'));
 });
 
-// it('renders MarvelCharacterDetail without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<MarvelCharacterDetail character={characters[0]}/>, div);
-// });
+it('renders MarvelCharacterDetail correctly when there is no character prop set', () => {
+  const props = {
+    character: null,
+    match: {
+      params: {id: '1'}
+    }
+  };
+  const list = renderer.create(React.createElement(MarvelCharacterDetail, props));
+  expect(list.toJSON()).toMatchSnapshot();
+});
 
-// it('renders MarvelCharacterDetail correctly when there is no character prop set', () => {
-//   const list = renderer.create(<MarvelCharacterDetail />).toJSON();
-//   expect(list).toMatchSnapshot();
-// });
-
-// it('renders MarvelCharacterDetail correctly when there is one character prop set', () => {
-//   const listWithCharacters = renderer.create(<MarvelCharacterDetail character={characters[0]}/>);
-//   listWithCharacters.getInstance().setState({ character: characters[0] });
-//   expect(listWithCharacters.toJSON()).toMatchSnapshot();
-// });
+it('renders MarvelCharacterDetail correctly when there is one character prop set', () => {
+  const props = {
+    character: characters[0],
+    match: {
+      params: {id: '1'}
+    }
+  };
+  const listWithCharacters = renderer.create(React.createElement(MarvelCharacterDetail, props));
+  // TO FIX
+  // This is NOT what I'd like to test... Snapshot is like the one in previous state meaning loader is displayed.
+  // I'd need to trigger img.onload and figure out how having portrait img tag rendered.
+  expect(listWithCharacters.toJSON()).toMatchSnapshot();
+});

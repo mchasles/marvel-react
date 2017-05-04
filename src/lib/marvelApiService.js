@@ -29,8 +29,8 @@ export const loadCharacter = (id) => {
 };
 
 // Request character portrait image to check if available, if an error happens return default image src
-export const getCharacterPortraitSrc = (character) => {
-    let portraitSrc = `${character.thumbnail.path}${URL_PORTRAIT_SUFFIX}`;
+export const getCharacterPortraitSrc = (path) => {
+    let portraitSrc = `${path}${URL_PORTRAIT_SUFFIX}`;
     return axios.get(portraitSrc)
       .then(
         // Successfully get character portrait (but image might be the default one when not available)
