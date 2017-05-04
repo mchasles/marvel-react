@@ -26,15 +26,34 @@ export class MarvelCharacterDetail extends Component {
         // Successfully get character portrait (but image might be the default one when not available)
         (portraitSrc) => {
           // Preload image in browser's cache before updating state
-          const img = document.createElement('img');
-          img.src = character.portraitSrc = portraitSrc;
-          img.onload = () => this.setState({character});
+          character.portraitSrc = portraitSrc;
+          return this.loadImg(character.portraitSrc)
+            .then(
+              () => this.setState({character}),
+              () => {
+                // If image failed to load, set default image
+                character.portraitSrc = IMG_NOT_AVAILABLE_SRC;
+                this.setState({character});
+              },
+            );
         },
         // Error getting character portrait (error 404)
         (portraitSrc) => {
           character.portraitSrc = portraitSrc;
           this.setState({character});
         });
+  }
+
+  loadImg(src){
+    return new Promise((resolve, reject) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.onload = () => resolve('done');
+      // If image does not load after 6 seconds, reject promise
+      setTimeout(() => {
+        reject('error')
+      }, 6000);
+    });
   }
 
   render() {
