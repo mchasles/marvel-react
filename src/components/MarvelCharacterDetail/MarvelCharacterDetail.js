@@ -10,11 +10,6 @@ export class MarvelCharacterDetail extends Component {
     character: null
   }
 
-  componentDidMount() {
-    return loadCharacter(this.props.match.params.id)
-      .then(this.setCharacterPortraitSrc.bind(this));
-  }
-
   componentWillReceiveProps(newProps) {
     this.setState({character: null}); // Set character state to null to display loader
     return loadCharacter(newProps.match.params.id)
