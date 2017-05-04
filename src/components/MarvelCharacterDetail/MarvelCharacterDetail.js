@@ -23,9 +23,12 @@ export class MarvelCharacterDetail extends Component {
         (portraitSrc) => {
           // Preload image in browser's cache before updating state
           character.portraitSrc = portraitSrc;
+          
           return preloadImg(character.portraitSrc)
             .then(
-              () => this.setState({character}),
+              () => {
+                this.setState({character})
+              },
               () => {
                 // If image failed to load, set default image
                 character.portraitSrc = IMG_NOT_AVAILABLE_SRC;
@@ -35,7 +38,7 @@ export class MarvelCharacterDetail extends Component {
         },
         // Error getting character portrait (error 404)
         (portraitSrc) => {
-          character.portraitSrc = portraitSrc;
+          character.portraitSrc = IMG_NOT_AVAILABLE_SRC;
           this.setState({character});
         });
   }

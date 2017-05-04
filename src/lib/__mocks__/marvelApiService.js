@@ -1,3 +1,5 @@
+const IMG_NOT_AVAILABLE_SRC = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/detail.jpg';
+
 export const characters = [
   {
     'id': '1',
@@ -10,7 +12,7 @@ export const characters = [
     'id': '2',
     'name': 'A-Bomb (HAS)',
     'thumbnail': {
-      'path': 'http://mock/2'
+      'path': ''
     }
   }
 ];
@@ -35,7 +37,7 @@ export const getCharacterPortraitSrc = (path) => {
     if (path.length) {
       resolve(path + '/portrait.jpg');
     } else {
-      reject('http://mock/default.jpg');
+      reject(IMG_NOT_AVAILABLE_SRC);
     }
   });
 }
