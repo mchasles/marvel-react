@@ -3,7 +3,7 @@ import { HashRouter as Router, Route} from 'react-router-dom';
 import {MarvelCharactersList} from './components/MarvelCharactersList/'
 import {MarvelCharacterDetail} from './components/MarvelCharacterDetail/'
 import {loadCharacters} from './lib/marvelApiService'
-import './app.scss';
+import './App.scss';
 
 class App extends Component {
   state = {
