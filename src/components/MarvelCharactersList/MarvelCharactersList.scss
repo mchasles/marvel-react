@@ -7,10 +7,35 @@
   margin: 0;
   max-width: 360px;
   padding: 0;
+  position: relative;
   width: 30%;
 
+  .react-logo-loader {
+    width: 60px;
+    height: 60px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
   li {
     list-style-type: none;
+  }
+
+  .error {
+    color: #61dafb;
+    font-size: small;
+    font-style: italic;
+    opacity: 0.5;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    p {
+      margin: 0;
+    }
   }
 
   a {

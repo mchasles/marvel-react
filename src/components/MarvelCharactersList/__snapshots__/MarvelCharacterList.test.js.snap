@@ -1,7 +1,34 @@
-exports[`test renders MarvelCharactersList correctly 1`] = `
-<ul
+exports[`test renders MarvelCharactersList correctly displaying characters list loader 1`] = `
+<div
   className="marvel-characters-list">
-  <li />
-  <li />
-</ul>
+  <img
+    alt="React logo spinning"
+    className="react-logo-loader"
+    src="logo.svg" />
+</div>
+`;
+
+exports[`test renders MarvelCharactersList correctly when characters are loaded 1`] = `
+<div
+  className="marvel-characters-list">
+  <ul>
+    <li />
+    <li />
+  </ul>
+</div>
+`;
+
+exports[`test renders MarvelCharactersList when error message when API does not respond 1`] = `
+<div
+  className="marvel-characters-list">
+  <div
+    className="error">
+    <p>
+      Error: Marvel API is unreachable
+    </p>
+    <p>
+      Please retry later.
+    </p>
+  </div>
+</div>
 `;
