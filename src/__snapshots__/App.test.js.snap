@@ -3,5 +3,12 @@ exports[`test renders App correctly 1`] = `
   className="app">
   <ul
     className="marvel-characters-list" />
+  <div
+    className="app-landing-wrapper">
+    <img
+      alt="React logo"
+      className="react-logo-landing"
+      src="logo.svg" />
+  </div>
 </div>
 `;

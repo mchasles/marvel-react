@@ -18,12 +18,12 @@ exports[`test renders MarvelCharacterDetail with error img if character portrait
   className="marvel-character-detail">
   <div>
     <h1>
-      A-Bomb (HAS)
+      3-D Man
     </h1>
-    <div
-      className="img-404">
-      Image Not Found
-    </div>
+    <img
+      alt="3-D Man"
+      className="thumbnail"
+      src="http://mock/1/portrait.jpg" />
   </div>
 </div>
 `;
