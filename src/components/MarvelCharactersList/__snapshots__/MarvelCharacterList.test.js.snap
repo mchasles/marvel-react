@@ -1,6 +1,23 @@
 exports[`test renders MarvelCharactersList correctly displaying characters list loader 1`] = `
 <div
   className="marvel-characters-list">
+  <div
+    className="pagination">
+    <a
+      className="disabled"
+      onClick={false}>
+      <img
+        alt="Next"
+        src="arrow-left.svg" />
+    </a>
+    <a
+      className="disabled"
+      onClick={false}>
+      <img
+        alt="Next"
+        src="arrow-right.svg" />
+    </a>
+  </div>
   <img
     alt="React logo spinning"
     className="react-logo-loader"
@@ -11,16 +28,52 @@ exports[`test renders MarvelCharactersList correctly displaying characters list 
 exports[`test renders MarvelCharactersList correctly when characters are loaded 1`] = `
 <div
   className="marvel-characters-list">
-  <ul>
-    <li />
-    <li />
-  </ul>
+  <div
+    className="pagination">
+    <a
+      className="disabled"
+      onClick={[Function]}>
+      <img
+        alt="Next"
+        src="arrow-left.svg" />
+    </a>
+    <a
+      className=""
+      onClick={[Function]}>
+      <img
+        alt="Next"
+        src="arrow-right.svg" />
+    </a>
+  </div>
+  <div>
+    <ul>
+      <li />
+      <li />
+    </ul>
+  </div>
 </div>
 `;
 
 exports[`test renders MarvelCharactersList when error message when API does not respond 1`] = `
 <div
   className="marvel-characters-list">
+  <div
+    className="pagination">
+    <a
+      className="disabled"
+      onClick={[Function]}>
+      <img
+        alt="Next"
+        src="arrow-left.svg" />
+    </a>
+    <a
+      className=""
+      onClick={[Function]}>
+      <img
+        alt="Next"
+        src="arrow-right.svg" />
+    </a>
+  </div>
   <div
     className="error">
     <p>

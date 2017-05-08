@@ -3,18 +3,20 @@ import axios from 'axios';
 const BASE_URL = 'https://gateway.marvel.com/v1/public/characters';
 // API key
 const API_KEY = 'cefd21ddeeea8bc5232fa3fe67c57e0f';
+// API key
+export const PAGE_LIMIT = 10;
 // URL of the default image when character portrait is not available
 export const IMG_NOT_AVAILABLE_SRC = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/detail.jpg';
 // URL suffix to add to resourceURI to get portrait
 export const URL_PORTRAIT_SUFFIX  = '/detail.jpg';
 
 // Fetch the 16 first characters from Marvel API (pagination will come later...)
-export const loadCharacters = () => {
+export const loadCharacters = (offset = 0) => {
   return axios.get(BASE_URL, {
     params: {
       apikey: API_KEY,
-      limit: 16,
-      offset: 0
+      limit: PAGE_LIMIT,
+      offset
     }
   }).then(res => res.data.data.results)
 };

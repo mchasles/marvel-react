@@ -1,0 +1,17 @@
+  .pagination {
+    display: flex;
+    a {
+      text-align: center;
+      flex: 1;
+      padding: 10px;
+      
+      &:hover {
+        background-color:rgba(38%, 85.5%, 98.4%, 0.7);
+      }
+      
+      &.disabled {
+        opacity: 0.1;
+        pointer-events: none;
+      }
+    }
+  }

@@ -10,11 +10,17 @@ class App extends Component {
   state = {
     characters: [],
     error: false,
-    loading: true
+    loading: true,
+    updateCharacters: this.updateCharacters.bind(this)
   }
 
   componentDidMount() {
-    return loadCharacters()
+    this.updateCharacters();
+  }
+
+  updateCharacters(offset) {
+    this.setState({ loading: true});
+    return loadCharacters(offset)
       .then(
         characters => this.setState({ loading: false, characters }),
         error      => this.setState({ loading: false, error: true })

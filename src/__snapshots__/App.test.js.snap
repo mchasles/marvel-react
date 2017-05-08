@@ -3,6 +3,23 @@ exports[`test renders App correctly 1`] = `
   className="app">
   <div
     className="marvel-characters-list">
+    <div
+      className="pagination">
+      <a
+        className="disabled"
+        onClick={false}>
+        <img
+          alt="Next"
+          src="arrow-left.svg" />
+      </a>
+      <a
+        className="disabled"
+        onClick={false}>
+        <img
+          alt="Next"
+          src="arrow-right.svg" />
+      </a>
+    </div>
     <img
       alt="React logo spinning"
       className="react-logo-loader"
