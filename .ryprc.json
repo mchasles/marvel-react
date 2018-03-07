@@ -1,0 +1,13 @@
+{
+  "github": {
+    "token": "9e18cef80e92f3d3e455dc566b5cc034c7981a50",
+    "owner": "mchasles",
+    "repository": "marvel-react"
+  },
+  "changelog": {
+    "displayCommitTypes": ["feat", "fix", "perf"],
+    "commitTypeAliases": {
+      "feature": "feat"
+    }
+  }
+}
